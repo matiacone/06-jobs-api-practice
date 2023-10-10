@@ -21,7 +21,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.msg = `${Object.values(err.keyValue)} is already in use. Please try another ${Object.keys(err.keyValue)}.`
     customError.statusCode = StatusCodes.BAD_REQUEST
   }
-
+  console.log(customError.statusCode)
   return res.status(customError.statusCode).json(customError.msg)
 }
 
